@@ -88,6 +88,12 @@
 						"type": "boolean",
 						"default": false,
 						"required": true
+					},
+					"invertTempColor": {
+						"title": "Invert Color Temperature",
+						"type": "boolean",
+						"default": false,
+						"description": "Invert the color temperature input/output. Enable this if warm/cool colors are reversed on your light."
 					}
 				}
 			}

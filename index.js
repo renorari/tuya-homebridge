@@ -227,13 +227,11 @@ class TuyaPlatform {
   // Update current value.
   configureAccessory(accessory) {
     // this.log("Configuring cached accessory [%s]", accessory.displayName, accessory.context.deviceId, accessory.UUID);
-    // Set the accessory to reachable if plugin can currently process the accessory,
-    // otherwise set to false and update the reachability later by invoking
-    // accessory.updateReachability()
-    accessory.reachable = true;
     accessory.on('identify', function (paired, callback) {
       // this.log.debug('[IDENTIFY][%s]', accessory.displayName);
-      callback();
+      if (typeof callback === 'function') {
+        callback();
+      }
     });
     this.accessories.set(accessory.UUID, accessory);
   }
